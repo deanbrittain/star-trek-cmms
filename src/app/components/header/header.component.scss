@@ -1,0 +1,21 @@
+.custom-toolbar {
+    display: flex;
+    justify-content: space-between;
+  
+    .tng-font {
+      font-family: 'tng', sans-serif
+    }
+  
+    div {
+      display: flex;
+      gap: 15px; /* Adjust the gap between items on the right */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      list-style-type: none; /* Remove default bullets */
+  
+      a {
+        cursor: pointer; /* Add if you want the items to be clickable */
+      }
+    }
+  }
+  
