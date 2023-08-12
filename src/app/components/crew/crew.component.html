@@ -1,1 +1,29 @@
-<p>crew works!</p>
+<button mat-raised-button (click)="openAddCrewMemberDialog()">+ Crew Member</button>
+
+<h1>Crew Management</h1>
+<div class="loading-icon" *ngIf="loading"><app-loading-spinner></app-loading-spinner></div>
+
+<div class="crew-card-container">
+<mat-card *ngFor="let member of crewMembers"
+          class="crew-card"
+          [ngClass]="{ 'crew-card-collapsed': !member.showDetails, 'crew-card-expanded': member.showDetails }"
+          [ngStyle]="{'background-color': getRoleColor(member)}"
+          (click)="toggleDetails(member)">
+    <div class="center-content">
+        <img class="mat-card-avatar profile-pic" [src]="member.avatarUrl" alt="Avatar preview" />
+        <h2 class="mat-card-title text-title">{{member.name}}</h2>
+        <h3 class="mat-card-subtitle text-subtitle">{{member.rank}}</h3>
+    </div>
+    <mat-card-content *ngIf="!member.showDetails">
+        <p><strong>Role:</strong> {{member.role}}</p>
+        <p><strong>Status:</strong> {{member.status}}</p>
+    </mat-card-content>
+    <mat-card-content *ngIf="member.showDetails">
+        <p><strong>Role:</strong> {{member.role}}</p>
+        <p><strong>Status:</strong> {{member.status}}</p>
+        <p><strong>Specialization:</strong> {{member.specialization}}</p>
+        <p><strong>Certifications:</strong> {{member.certifications}}</p>
+        <p><strong>Contact:</strong> {{member.contact}}</p>
+    </mat-card-content>
+</mat-card>
+</div>

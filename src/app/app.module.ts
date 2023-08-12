@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +18,8 @@ import { CrewComponent } from './components/crew/crew.component';
 import { EngineeringComponent } from './components/engineering/engineering.component';
 import { SuppliesComponent } from './components/supplies/supplies.component';
 import { MissionControlComponent } from './components/mission-control/mission-control.component';
+import { AddCrewMemberDialogComponent } from './components/add-crew-member-dialog/add-crew-member-dialog.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +31,22 @@ import { MissionControlComponent } from './components/mission-control/mission-co
     EngineeringComponent,
     SuppliesComponent,
     MissionControlComponent,
+    AddCrewMemberDialogComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     MatToolbarModule,
+    MatCardModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatSelectModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,66 @@
+.crew-card {
+  width: 400px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.crew-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px; /* Defines the space between cards */
+}
+
+.crew-card-collapsed {
+  max-height: 225px;
+}
+
+.crew-card-expanded {
+  max-height: 500px;
+}
+
+.profile-pic {
+  height: 100px; /* Increased size */
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #c3c6ce;
+  margin: 15px auto; /* Center the image */
+  display: block;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+  text-align: center; /* Align text to the center */
+  margin: 0; /* Remove default margins */
+}
+
+.mat-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.mat-card-subtitle {
+  font-size: 1em;
+  color: rgb(134, 134, 134); /* Adjust the color */
+  padding-bottom: 5px;
+}
+
+.mat-card-content {
+  color: rgb(134, 134, 134);
+}
+
+.crew-card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}

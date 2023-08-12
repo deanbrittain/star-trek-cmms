@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <input type="file" (change)="onFileSelect($event)" />
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Rank</mat-label>
+        <mat-select formControlName="rank" required>
+          <mat-option *ngFor="let rank of ranks" [value]="rank">{{rank}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Role</mat-label>
+      <mat-select formControlName="role" required>
+        <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Specialization</mat-label>
+      <input matInput formControlName="specialization" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Certifications</mat-label>
+      <input matInput formControlName="certifications">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contact</mat-label>
+      <input matInput formControlName="contact" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <input matInput formControlName="status" required>
+    </mat-form-field>
+    <button type="submit" mat-raised-button>Add Crew Member</button>
+  </form>
